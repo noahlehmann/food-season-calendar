@@ -4,7 +4,8 @@ var db = require("../database/db-init")
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  db.get("SELECT * FROM users", [], (err, row) => {
+  let query = "SELECT * FROM t_product";
+  db.get(query, [], (err, row) => {
     res.send(row);
   });
 });
